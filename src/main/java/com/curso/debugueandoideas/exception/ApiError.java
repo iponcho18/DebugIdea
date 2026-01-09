@@ -1,22 +1,26 @@
-package com.curso.debugueandoideas;
+package com.curso.debugueandoideas.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.java.Log;
+import lombok.extern.log4j.Log4j2;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.http.HttpStatus;
 
 import java.time.Instant;
 import java.util.List;
 
 @Data
 @Builder
-@Log
+@Log4j2
 @NoArgsConstructor
 @AllArgsConstructor
 public class ApiError {
-    private Instant timestamp = Instant.now();
-    private int status;
+    @CreatedDate
+    private Instant timestamp;
+    private HttpStatus status;
     private String error;
     private String message;
     private String path;
@@ -26,7 +30,7 @@ public class ApiError {
     @AllArgsConstructor
     @Builder
     @Data
-    @Log
+    @Log4j2
     public static class FieldViolation {
         private String field;
         private String message;

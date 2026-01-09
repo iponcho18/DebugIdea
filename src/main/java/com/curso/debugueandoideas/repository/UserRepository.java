@@ -1,4 +1,7 @@
 package com.curso.debugueandoideas.repository;
 
-public interface UserRepository {
+import com.curso.debugueandoideas.entity.UserEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
 }

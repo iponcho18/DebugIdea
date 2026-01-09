@@ -1,4 +1,7 @@
 package com.curso.debugueandoideas.repository;
 
-public interface PageRepository {
+import com.curso.debugueandoideas.entity.PostEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PageRepository extends JpaRepository<PostEntity, Long> {
 }

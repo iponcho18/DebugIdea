@@ -1,4 +1,7 @@
 package com.curso.debugueandoideas.exception;
 
-public class NotFoundException {
+public class NotFoundException extends RuntimeException{
+    public NotFoundException(String ex){
+        super(ex);
+    }
 }

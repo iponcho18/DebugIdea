@@ -1,4 +1,4 @@
 package com.curso.debugueandoideas.config;
 
-public interface IJpaAuditingConfig {
+public class JpaAuditingConfigImpl extends JpaAuditingConfig{
 }

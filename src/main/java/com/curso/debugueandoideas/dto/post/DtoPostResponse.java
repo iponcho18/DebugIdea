@@ -1,19 +1,20 @@
-package com.curso.debugueandoideas.dto;
+package com.curso.debugueandoideas.dto.post;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PostDtoResponse {
-    private LocalDateTime creationTs;
+public class DtoPostResponse {
     private String content;
     private String img;
+    private Instant createAt;
+    private Instant updateAt;
 }

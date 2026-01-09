@@ -1,4 +1,4 @@
-package com.curso.debugueandoideas.dto.request;
+package com.curso.debugueandoideas.dto.user;
 
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;

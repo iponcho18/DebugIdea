@@ -1,4 +1,7 @@
 package com.curso.debugueandoideas.repository;
 
-public interface PropertyRepository {
+import com.curso.debugueandoideas.entity.PropertyEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PropertyRepository extends JpaRepository<PropertyEntity, String> {
 }
