@@ -34,6 +34,20 @@ CREATE TABLE post (
     FOREIGN KEY (id_page) REFERENCES page(id)
 );
 
+CREATE TABLE service (
+      service_id VARCHAR(100) PRIMARY KEY,
+      service_description VARCHAR(200),
+      service_host VARCHAR(80),
+      service_port INT,
+      service_secure SMALLINT,
+      service_timeout SMALLINT,
+      service_baseurl VARCHAR(200),
+      service_name VARCHAR(100),
+      service_method VARCHAR(20)
+);
+
+INSERT INTO service (service_id,service_host,service_method,service_port,service_secure,service_baseurl,service_name,service_timeout,service_description) values ('IFCONFIG','ifconfig.io','GET',443,1,'/','all.json',10,'');
+
 -- Insertar datos en la tabla AppUser
 INSERT INTO usuario (name, age, email, password,create_at,update_at) VALUES ('User1', 25, 'user1@example.com', 'password1',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
 INSERT INTO usuario (name, age, email, password,create_at,update_at) VALUES ('User2', 30, 'user2@example.com', 'password2',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);

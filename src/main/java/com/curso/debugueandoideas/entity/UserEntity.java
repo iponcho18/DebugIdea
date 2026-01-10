@@ -1,14 +1,13 @@
 package com.curso.debugueandoideas.entity;
 
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
+import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import lombok.Data;
 import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j2;
-import org.hibernate.Length;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -49,8 +48,8 @@ public class UserEntity {
     @Column(name = "update_at", nullable = false)
     private Instant updateAt;
     @LastModifiedBy
-    @Column(name = "udapte_by", nullable = false, length = 150)
-    private String udapteBy;
+    @Column(name = "update_by", nullable = false, length = 150, unique = true)
+    private String updateBy;
 
     @OneToOne(mappedBy = "user")
     private PageEntity page;

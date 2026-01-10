@@ -2,6 +2,7 @@ package com.curso.debugueandoideas.service;
 
 import com.curso.debugueandoideas.dto.DtoService;
 import com.curso.debugueandoideas.entity.ServiceEntity;
+import com.curso.debugueandoideas.exception.NotFoundException;
 import com.curso.debugueandoideas.mapper.ServiceMapper;
 import com.curso.debugueandoideas.repository.ServiceRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,14 +20,6 @@ public class ServiceService {
     private final ServiceMapper serviceMapper;
 
     public DtoService getService (String s){
-        DtoService service = null;
-        Optional<ServiceEntity> optional = serviceRepository.findById(s);
-        if(optional.isPresent()) {
-            ServiceEntity entity = optional.get();
-            service = serviceMapper.toDto(entity);
-        }else{
-            service = serviceMapper.toDto(new ServiceEntity());
-        }
-        return service;
+        return serviceRepository.findById(s).map(serviceMapper::toDto).orElseThrow(() -> new NotFoundException("Servicio no encontredo"+s));
     }
 }
