@@ -1,6 +1,6 @@
 package com.curso.debugueandoideas.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j2;
@@ -37,8 +37,8 @@ public class PostEntity {
     @Column(name = "update_at", nullable = false)
     private Instant updateAt;
     @LastModifiedBy
-    @Column(name = "udapte_by", nullable = false, length = 150)
-    private String udapteBy;
+    @Column(name = "update_by", nullable = false, length = 150, unique = true)
+    private String updateBy;
 
     @Column(name="img", length = 255 )
     private String img;
